@@ -1,47 +1,65 @@
-# Music Fairy
+# Music-CLI 🎹
 
-Music Fairy is a script that utilizes speech recognition to play any song audio in MPD (Music Player Daemon). It uses YouTube as a source to fetch music and integrates with various libraries and tools to provide a seamless music playback experience.
+Music-CLI is a toolbox with multiple scripts.
+
+It uses speech recognition to play any song audio in MPD (Music Player Daemon). It uses YouTube as a source to fetch music and integrates with various libraries and tools to provide a seamless music playback experience.
+
+- The `play-voice` script takes the model folder as argument (I renamed them for quick use).
+- The `play` script doesn't use the voice recognition. It takes the prompt as argument.
+
+## Prerequisite
+- python (I use 3.11.6)
+- ffmpeg
+- mpd & mpc (`pacman -Ss mpd` you'll find both)
+- unzip or any decompresser for the models
+- [Desktop Notifications](https://wiki.archlinux.org/title/Desktop_notifications)
+optional if you don't care or remove the last line of both scripts
 
 ## Installation
 
-To install Music Fairy, follow these steps:
+To install Music-CLI, follow these steps:
 
-1. Clone the repository from GitHub: [github.com/bugswriter/music_fairy](https://github.com/bugswriter/music_fairy)
+1. Clone the repository from GitHub: [github.com/SounaVR/music-cli](https://github.com/SounaVR/music-cli)
 
-2. Copy the `music-fairy` script into `~/.local/bin` on your system.
+2. Copy both scripts into `~/.local/bin` on your system.
 
 3. Install the required Python packages by running the following commands:
 
 ```
 pip3 install vosk
 pip3 install yt-dlp
-pip3 install google_speech
 ```
 
-4. Ensure that `ffmpeg` is installed on your system.
+4. Download the Vosk model from [alphacephei.com/vosk/models](https://alphacephei.com/vosk/models). It is recommended to download the lighter model with a smaller file size.
 
-5. Download the Vosk model from [alphacephei.com/vosk/models](https://alphacephei.com/vosk/models). It is recommended to download the lighter model with a smaller file size.
-
-6. Put the model directory in `~/.local/share/music_fairy/`, or change the `VOSK_MODEL_PATH` variable to the path where you downloaded the Vosk model.
-
-7. Bind Music Fairy to a specific key using your system's keybinding configuration.
+5. Put the model directory in `~/.local/share/models/`, or change the `VOSK_MODEL_PATH` variable to the path where you downloaded the Vosk model.
 
 ## Usage
 
-Once installed and configured, you can use Music Fairy to play songs by following these steps:
+Once installed and configured, you can use the scripts to play songs by following these steps:
 
-1. Activate the speech recognition by pressing the bound key.
+### | play
 
-2. Speak the name of the song or artist you want to play.
+- `play song_name` (use quotes for spaces like "Still Alive - Portal")
 
-3. Music Fairy will fetch the audio from YouTube and play it using MPD.
+### | play-voice
 
-4. Enjoy your music!
+- `play model_folder`
 
-Please note that a working internet connection is required for Music Fairy to fetch music from YouTube.
+- Speak the name of the song or artist you want to play.
+
+- The will fetch the audio from YouTube and play it using MPD.
+
+- Enjoy your music!
+
+Please note that a working internet connection is required to fetch music from YouTube.
+
+### Fun
+Took me 4 sec to start a song with `play`
+and around 10 with `play-voice`
 
 ## License
 - GPL-3
 
-## Support
-- Checkout my donate page - [bugswriter.com/donate](https://bugswriter.com/donate)
+## Credit
+- Did you missed it ? It's a fork but okay, here's the goat : [Bugswriter](https://github.com/Bugswriter/music_fairy) 🥇 (tysm btw 😘)
