@@ -38,13 +38,16 @@ pip3 install yt-dlp
 
 Once installed and configured, you can use the scripts to play songs by following these steps:
 
-### | play
+### | play-video
+- `play-video video_name` (use quotes for spaces like "4k wildlife")
 
-- `play song_name` (use quotes for spaces like "Still Alive - Portal")
+### | play-music
 
-### | play-voice
+- `play-music song_name` (use quotes for spaces like "Still Alive - Portal")
 
-- `play model_folder`
+### | play-music-voice
+
+- `play-music-voice model_folder`
 
 - Speak the name of the song or artist you want to play.
 
@@ -55,8 +58,12 @@ Once installed and configured, you can use the scripts to play songs by followin
 Please note that a working internet connection is required to fetch music from YouTube.
 
 ### Fun
-Took me 4 sec to start a song with `play`
-and around 10 with `play-voice`
+Took me 4 FUCKING SECONDS TO GET A VIDEO WITH AUDIO ???? HELLO ??? EXCUSE ME ??
+Goodbye YouTube fr fr
+
+Between 3-4 sec to start a song with `play-music`.
+
+Around 10 with `play-music-voice`
 
 ## License
 - GPL-3

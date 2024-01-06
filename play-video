@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# variables
+INVIDIOUS_INSTANCE="https://vid.puffyan.us"
+
+# make youtube search query
+query="$(printf '%s' "$1" | tr ' ' '+' )"
+
+# search on invidous (youtube) instance for video id to make a url
+video_id="$(curl -s "$INVIDIOUS_INSTANCE/search?q=$query" | grep -Eo "watch\?v=.{11}" | head -n 1)"
+youtube_url="https://youtube.com/$video_id"
+
+# get url for bestaudio AND bestvideo stream from the youtube video
+video_url="$(yt-dlp -f best/bestvideo+bestaudio --get-url "$youtube_url")"
+
+# play the video on mpv
+mpv $video_url
+
+# Get youtube video title for system notification
+title=$(yt-dlp --get-title "$youtube_url")
+notify-send "Playing: " "$title"
