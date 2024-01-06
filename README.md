@@ -13,7 +13,7 @@ It uses speech recognition to play any song audio in MPD (Music Player Daemon). 
 - ffmpeg
 - mpd & mpc (`pacman -Ss mpd` you'll find both)
 - [mpv](https://archlinux.org/packages/extra/x86_64/mpv/)
-- unzip or any decompresser for the models
+- unzip or any decompressor for the models
 - [Desktop Notifications](https://wiki.archlinux.org/title/Desktop_notifications)
 optional if you don't care or remove the last line of both scripts
 
