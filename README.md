@@ -4,8 +4,9 @@ Music-CLI is a toolbox with multiple scripts.
 
 It uses speech recognition to play any song audio in MPD (Music Player Daemon). It uses YouTube as a source to fetch music and integrates with various libraries and tools to provide a seamless music playback experience.
 
-- The `play-voice` script takes the model folder as argument (I renamed them for quick use).
-- The `play` script doesn't use the voice recognition. It takes the prompt as argument.
+- The `play-video` script takes a prompt as argument.
+- The `play-music` script doesn't use the voice recognition. It takes the prompt as argument.
+- The `play-music-voice` script takes the model folder as argument (I renamed them for quick use).
 
 ## Prerequisite
 - python (I use 3.11.6)
